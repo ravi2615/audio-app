@@ -1,6 +1,6 @@
 # AudioApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
+This project was generated with [Angular CLI](https://angular.io/) version 10.2.1.
 
 LocalStorage is used for data.
  ## Project Demo
