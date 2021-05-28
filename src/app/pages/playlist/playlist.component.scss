@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+
+    .content {
+      .logo {
+        // margin: 2.5rem;
+        text-align: center;
+        font-size:24px;
+        color: #3f51b5;
+        img{
+          height:200px !important;
+          width:200px !important;
+        }
+      }
+      
+      .mat-list{
+        // height: 230px;
+        // overflow: scroll;
+        padding-bottom: 80px;
+        .mat-subheader{
+          color: $light-grey !important;
+        }
+        .mat-list-item{
+          .mat-list-item{
+            .mat-icon{
+            color: $light-pink !important;
+          }}}
+      }
+    }
+  
+
+
+.light-container{
+  padding-top: 60px;
+  padding-bottom: 90px;
+  .mat-list-item:hover{
+    cursor: pointer;
+    background-color: $dark-light;
+    color: $light-white;
+}
+}
+
+.dark-container{
+  padding-top: 60px;
+  margin-bottom: 90px;
+  
+  .mat-list-item{
+    color: $light-white;
+  }.mat-list-item:hover{
+    cursor: pointer;
+    background-color: $dark-light;
+    color: $light-white;
+}
+}

@@ -1,0 +1,9 @@
+<div style="display: flex; flex-direction: column; align-items:center; font-size: 20px !important">
+    <div style="display: flex; flex-direction: row; justify-content:center;">
+        <input *ngIf="!isClicked" matInput class="form-control" type="text" name="playlistName" [(ngModel)] ='playlistName'>
+        <button mat-raised-button color="accent" (click)=onSelect()>Add</button>  
+    </div>
+    <div  *ngFor="let playlist of filesPlaylist" style="line-height: 50px !important; text-transform:Capitalize">
+        <mat-checkbox *ngIf="playlistName==''"  (change)="onSelect($event)" (click)="isClicked=!isClicked" value={{playlist.name}}> Add to {{playlist.name}}</mat-checkbox>
+    </div>
+</div>

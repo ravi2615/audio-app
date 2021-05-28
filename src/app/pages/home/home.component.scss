@@ -1,0 +1,59 @@
+@import '../../../styles.scss';
+
+
+.spacer {
+  flex: 1  auto;
+}
+.albums{  
+  display: flex !important; 
+  flex-direction:row !important;
+  // overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
+  
+  overflow-x: scroll;
+      .mat-card{
+          width: 100px;
+          height: 130px;
+          // margin:  10px; 
+          border-radius:4px;
+          line-height:0px;
+          font-size: 5px !important;
+          text-transform: capitalize;
+      }
+      .mat-card:hover{
+          box-shadow: 0 0 3px $light-grey;
+          transform: scale(1.01);
+          cursor:pointer;
+      }
+}
+
+.albums::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.albums {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+
+  .light-container{
+    padding-top: 70px;
+    padding-bottom: 90px;
+    // align-items: center;
+    .mat-card{
+    background-color: transparent;
+    color: $dark-black;
+    }
+  }
+  
+  .dark-container{
+    padding-top: 70px;
+    padding-bottom: 90px;
+    .mat-card{
+    background-color: transparent;
+    color: $light-white;
+    }
+  }

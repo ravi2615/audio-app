@@ -1,0 +1,40 @@
+<div [ngClass]="themeModeService.darkMode? 'dark-container':'light-container'" style="background-image: 'url({{audioService.currentFile.image}})' !important;">
+  
+    <div class="content">
+        <!-- <div class="logo">
+          <img *ngIf="audioService.currentFile.image!=undefined && audioService.currentFile.image!='' &&" src="{{audioService.currentFile.image}}">
+          <img *ngIf="audioService.currentFile.image==undefined||audioService.currentFile.image==''" src="../../../assets/icons/icon-512x512.jpeg">
+          <h4 id="title">{{audioService.currentFile.name}}</h4>
+          <span style="font-size: 12px;" id="title" *ngIf="audioService.currentFile.album_title">album: {{audioService.currentFile.album_title}}</span>
+      </div> -->
+  
+      <mat-list>
+        <h3 mat-subheader>Songs</h3>
+        <h5 *ngIf="files.length==0" style="text-align: center;">No song Available</h5>
+        <mat-list-item *ngFor="let file of files; index as i" >
+
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)=addToPlaylist(file)>
+              Add To Playlist
+            </button>
+          </mat-menu>
+
+          <mat-list-item (click)="openFile(file,i)">
+            <!-- <mat-icon mat-list-icon>music_note</mat-icon> -->
+          <h4 mat-line>{{ file.name }}</h4>
+          <h5 mat-line>by {{ file.artist }}</h5>
+          <mat-icon *ngIf="audioService.currentFile._id == i && !state?.error && audioService.currentFile.name && state?.readableCurrentTime">volume_up</mat-icon>
+          <h6 *ngIf="audioService.currentFile._id === i && state?.error">ERROR</h6>
+          <mat-divider></mat-divider>
+          </mat-list-item>
+          
+        </mat-list-item>
+      </mat-list>
+    </div>
+  
+   
+  </div>

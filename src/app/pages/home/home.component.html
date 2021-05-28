@@ -1,0 +1,42 @@
+
+<div [ngClass]="themeModeService.darkMode? 'dark-container':'light-container'">
+  <div style="display: flex; flex-direction:row">
+    <h4 style="font-size: 14px;margin: 20px 5px 0 5px" *ngIf="filesPlaylist.length">Playlist</h4>
+    <span class="spacer"></span>
+    <h4 style="font-size: 14px;margin: 20px 5px 0 5px; cursor:pointer; text-decoration:underline" (click)="removeAll()" *ngIf="filesPlaylist.length">Delete All Playlist</h4>
+  </div>
+  <div class="albums">
+    <div  *ngFor=" let album of filesPlaylist ">
+    <mat-card routerLink="playlist/{{album.name}}">
+        <mat-card-header >
+        </mat-card-header>
+        <div style="border-radius: 10px;padding: 5px">
+        <img  mat-card-image src="../../../assets/icons/icon-512x512.jpeg">
+        </div>
+        <div>
+          <div>
+            <mat-card-title style="font-size: 14px; text-align:center;">{{album.name}}</mat-card-title>
+          </div> 
+        </div>
+      </mat-card>
+      </div>
+  </div>
+  <h6 style="font-size: 14px;margin:5px" *ngIf="files">Album</h6>
+  <div class="albums">
+    <div  *ngFor=" let album of files ">
+      <mat-card routerLink="allsong/{{album._id}}">
+      <mat-card-header >
+      </mat-card-header>
+      <div style="border-radius: 10px;padding: 5px">
+      <img  mat-card-image src="../../../assets/icons/icon-512x512.jpeg">
+      </div>
+      <div>
+        <div>
+          <mat-card-title style="font-size: 14px; text-align:center;">{{album.album_title}}</mat-card-title>
+        </div> 
+      </div>
+    </mat-card>
+  </div>
+  </div>
+      
+</div>

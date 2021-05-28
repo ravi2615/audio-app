@@ -1,0 +1,19 @@
+@import '../../../styles.scss';
+
+input{
+    font-size: 16px;
+    padding:  5px;
+    border-radius: 2px;
+    background-color: $dark-black;
+    color: $light-white;
+    // border: none;
+    text-transform: capitalize;
+  }
+  input:focus{
+    outline: none;
+  }
+
+  button{
+      width: 10px !important;
+      margin: 0 4px;
+  }
