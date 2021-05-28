@@ -6,8 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 // import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
-    { path: 'playlist/:album', component: PlaylistComponent },
-    { path: 'allsong/:album', component: PlayerComponent },
+    { path: 'playlist/?:album', component: PlaylistComponent },
+    { path: 'allsong/?:album', component: PlayerComponent },
     { path: '', component: HomeComponent },
     { path: '**', redirectTo: '' }
 ];
