@@ -118,7 +118,7 @@ export class AppComponent implements OnInit  {
         this.audioService.play();
         // console.log("_",this.state.readableCurrentTime=='',"ud",( localStorage.getItem("current")!='undefined' ,"nl",localStorage.getItem("current")!=null));
         
-        if(this.state?.readableCurrentTime=='' &&( localStorage.getItem("current")!='undefined' && localStorage.getItem("current")!=null)){
+        if(!this.state?.readableCurrentTime &&( localStorage.getItem("current")!='undefined' && localStorage.getItem("current")!=null)){
           this.audioService.currentFile=JSON.parse(localStorage.getItem("current"));
           // console.log("play",this.audioService.currentFile)
           this.fileLoad();
