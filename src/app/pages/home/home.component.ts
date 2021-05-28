@@ -56,7 +56,9 @@ export class HomeComponent implements OnInit {
   }
 
   removeAll(){
-    localStorage.removeItem("files")
+    localStorage.removeItem("files");
+    if(this.audioService.currentFile.category=="playlist")
+    localStorage.removeItem("current");
     this.ngOnInit();
   }
 
